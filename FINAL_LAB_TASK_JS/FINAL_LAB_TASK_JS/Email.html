@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta email="viewport" content="width=device-width, initial-scale=1">
+	<title>EMAIL</title>
+		<script>
+		function validate(){
+			let email = document.getElementById('email').value;
+
+				if (email.length === 0) {
+			        document.getElementById('head1').innerHTML = 'Email is required';
+			    } else if (!email.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+(?:\.[a-zA-Z0-9-]+)*$/g)) {
+			        document.getElementById('head1').innerHTML = 'Email is not valid e.g example@example.com';
+			    } else {
+			        document.getElementById('head1').innerHTML = '';
+			        return true;
+			    }
+			    return false;
+			}
+		</script>
+</head>
+
+<body>
+		<h1 id='head1'>JS Example</h1>
+		<p>Email</p>
+		<input type="text" id="email" name="email" value="">
+		<br><br>
+		<input type="button" name="email" value="Submit" onclick="validate()">
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>NAME</title>
+	<script>
+		function validate(){
+			let name = document.getElementById('name').value;
+
+			if (name.length === 0) {
+		        document.getElementById('head1').innerHTML = "Null data...";
+		    } else if (name.length < 2) {
+		        document.getElementById('head1').innerHTML = "At least 2 words...";
+		    } else if (!name.match(/^[a-zA-Z]/g)) {
+		        document.getElementById('head1').innerHTML = "Name must start with a letter...";
+		    } else if (!name.match(/^[a-zA-Z.-]+$/g)) {
+		        document.getElementById('head1').innerHTML = 'Name must contain only letters, numbers, periods and dashes';
+		    } else {
+		        document.getElementById('head1').innerHTML = '';
+		        return true;
+		    }
+		    return false;
+		}
+
+	</script>
+</head>
+
+<body>
+		<h1 id='head1'>JS Example</h1>
+		<h1>Name</h1>
+		<input type="text" id="name" name="name" value="" > 
+		<input type="button" name="name" value="Submit" onclick="validate()">
+
+</body>
+</html>
